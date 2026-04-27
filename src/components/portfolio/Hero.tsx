@@ -85,14 +85,18 @@ export const Hero = () => {
           >
             Contact Me
           </a>
-          <a
-            href="/Amera_Khaled_CV.pdf"
-            download="Amera_Khaled_CV.pdf"
+          <button
+            onClick={() => {
+              const link = document.createElement('a');
+              link.href = '/Amera_Khaled_CV.pdf';
+              link.download = 'Amera_Khaled_CV.pdf';
+              link.click();
+            }}
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass text-foreground font-medium hover:border-cyan/50 hover:text-cyan transition-all"
           >
             <Download size={18} />
             Download CV
-          </a>
+          </button>
         </motion.div>
 
         <motion.div
