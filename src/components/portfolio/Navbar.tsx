@@ -3,14 +3,21 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#education", label: "Education" },
-  { href: "#contact", label: "Contact" },
+  { href: "home", label: "Home" },
+  { href: "about", label: "About" },
+  { href: "skills", label: "Skills" },
+  { href: "projects", label: "Projects" },
+  { href: "experience", label: "Experience" },
+  { href: "education", label: "Education" },
+  { href: "contact", label: "Contact" },
 ];
+
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -33,31 +40,34 @@ export const Navbar = () => {
       }`}
     >
       <nav className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#home" className="font-display font-bold text-lg tracking-tight">
+        <button
+          onClick={() => scrollToSection("home")}
+          className="font-display font-bold text-lg tracking-tight"
+        >
           <span className="text-gradient">Amera</span>
           <span className="text-foreground">.dev</span>
-        </a>
+        </button>
 
         <ul className="hidden md:flex items-center gap-1">
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
+              <button
+                onClick={() => scrollToSection(link.href)}
                 className="px-3 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors relative group"
               >
                 {link.label}
                 <span className="absolute bottom-1 left-3 right-3 h-px bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-              </a>
+              </button>
             </li>
           ))}
         </ul>
 
-        <a
-          href="#contact"
+        <button
+          onClick={() => scrollToSection("contact")}
           className="hidden md:inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-gradient-primary text-primary-foreground hover:shadow-glow transition-all"
         >
           Let's Talk
-        </a>
+        </button>
 
         <button
           onClick={() => setOpen(!open)}
@@ -77,13 +87,12 @@ export const Navbar = () => {
           <ul className="container py-4 flex flex-col gap-1">
             {links.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block px-3 py-3 text-sm text-muted-foreground hover:text-foreground"
+                <button
+                  onClick={() => { scrollToSection(link.href); setOpen(false); }}
+                  className="block w-full text-left px-3 py-3 text-sm text-muted-foreground hover:text-foreground"
                 >
                   {link.label}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

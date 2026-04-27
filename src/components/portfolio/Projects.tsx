@@ -17,15 +17,15 @@ const projects: Project[] = [
     description:
       "A modern e-commerce experience with product browsing, cart, and a clean responsive UI built for speed and accessibility.",
     tech: ["React.js", "Vite", "Bootstrap", "Tailwind", "Axios"],
-    github: "https://github.com/AmeraKhaled",
-    demo: "https://github.com/AmeraKhaled",
+    github: "https://github.com/AmeraKhaled/React_ShopHub_Ecommerce",
+    demo: "https://amerakhaled.github.io/React_ShopHub_Ecommerce/",
   },
   {
     title: "Planora Tracker",
     description:
       "Fullstack habit & task tracker with a calendar UI, REST API, and persistent backend for daily productivity.",
     tech: ["React", "Django", "PostgreSQL", "REST API"],
-    github: "https://github.com/AmeraKhaled",
+    github: "https://github.com/Ayat166/Life_Tracker_Frontend",
   },
   {
     title: "Colonoscopy AI Diagnosis",
@@ -33,6 +33,21 @@ const projects: Project[] = [
       "Graduation project (Excellent Degree). Mobile app leveraging machine learning & computer vision to assist medical diagnosis.",
     tech: ["Flutter", "Python", "ML", "Computer Vision"],
     badge: "Graduation Project",
+  },
+  {
+    title: "Simple Database with Bash",
+    description:
+      "A lightweight file-based database management system built entirely in Bash, supporting CRUD operations via a terminal menu interface.",
+    tech: ["Bash", "Shell Scripting", "Linux"],
+    github: "https://github.com/AmeraKhaled/Simple_DataBase_with_Bash",
+  },
+  {
+    title: "Oversize Brand Website",
+    description:
+      "A modern, responsive landing page for an oversize clothing brand, featuring a clean layout and smooth UI designed to highlight the brand identity.",
+    tech: ["HTML", "CSS"],
+    github: "https://github.com/AmeraKhaled/Oversize_brand-website",
+    demo: "https://amerakhaled.github.io/Oversize_brand-website/",
   },
 ];
 
